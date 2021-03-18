@@ -35,7 +35,7 @@ const useFetch = (endpoint) => {
     };
 
     fetchData();
-  }, [endpoint]);
+  }, [cache, context, endpoint]);
 
   return {
     status,

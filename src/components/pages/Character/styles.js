@@ -16,12 +16,21 @@ const Wrapper = styled.div`
     }
 
     &__avatar {
-      background: ${theme.boxBackgroundInv};
+      background: url(/assets/images/avatar.jpg) no-repeat 50% 50%;
+      background-size: cover;
       display: block;
-      width: 120px;
+      flex: 0 0 60px;
+
+      @media only screen and (min-width: ${theme.breakpoints.mobile}) {
+        flex: 0 0 120px;
+      }
     }
     &__details {
-      padding: ${theme.spacing[4]};
+      padding: ${theme.spacing[2]};
+
+      @media only screen and (min-width: ${theme.breakpoints.mobile}) {        
+        padding: ${theme.spacing[4]};
+      }
     }
     &__title {
       text-transform: uppercase;
@@ -34,11 +43,11 @@ const Wrapper = styled.div`
       margin: 0;
     }
     &__favorite {
-      margin-left: auto;
-      width: 10%;
+      margin-left: auto;      
       display: flex;
       justify-content: center;
       align-items: center;
+      flex: 0 0 60px;
     }
     &__data {
       padding: ${theme.spacing[4]};

@@ -19,7 +19,7 @@ const Characters = () => {
 
   const endpoint = `${process.env.REACT_APP_API_URL}${config.endpoints.characters}${params}`;
 
-  const { status, error, data } = useFetch(endpoint);
+  const { status, data } = useFetch(endpoint);
 
   const characters = data ? data.results : [];
 

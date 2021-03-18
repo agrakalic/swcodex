@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { useFetch } from '../../../hooks';
 import config from '../../../config';
-import { Homeworld, Favorite, FilmName } from '../../blocks';
+import { Homeworld, Favorite, FilmTitle } from '../../blocks';
 import { Inner, Box } from '../../../ui/containers';
 import { H2, P, DL, DT, DD } from '../../../ui/typography';
 import { Button } from '../../../ui/forms';
@@ -13,9 +13,7 @@ const Character = () => {
   let { id } = useParams();
 
   const endpoint = `${process.env.REACT_APP_API_URL}${config.endpoints.characters}/${id}/`;
-  const { status, error, data } = useFetch(endpoint);
-
-  console.log(data);
+  const { data } = useFetch(endpoint);
 
   return (
     data && (
@@ -45,8 +43,8 @@ const Character = () => {
               <DD>{data.mass}</DD>
               <DT>Films</DT>
               <DD>
-                {data.films.map((film) => 
-                  <span className="character__film-name"><FilmName url={film} /></span>
+                {data.films.map((film, i) => 
+                  <span className="character__film-name" key={i}><FilmTitle url={film} /></span>
                 )}
               </DD>
             </DL>

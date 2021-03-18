@@ -8,8 +8,13 @@ const Wrapper = styled.div`
   
   a, a:visited, a:hover {
     color: inherit;
-    margin: 0 ${theme.spacing[2]};
+    margin: 0 ${theme.spacing[1]};
   }
+
+  span {
+    margin: 0 ${theme.spacing[1]};
+  }
+
 `;
 
 export default Wrapper;

@@ -7,7 +7,7 @@ const Wrapper = styled.span`
   cursor: pointer;
 
   &.active {
-    color: ${theme.colors.accent};
+    color: ${theme.colors.activeIcon};
   }
 
   svg {

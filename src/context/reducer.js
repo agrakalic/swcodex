@@ -17,7 +17,6 @@ export const reducer = (state, action) => {
       };
     case actionTypes.SET_FAVORITES:
       localStorage.setItem('favorites', JSON.stringify(action.data.favorites));
-      console.log(localStorage.getItem('favorites'));
       return {
         ...state,
         favorites: action.data.favorites,

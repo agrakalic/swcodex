@@ -4,7 +4,7 @@ import { getIdFromUrl } from '../../../utils';
 import { useFetch } from '../../../hooks';
 import config from '../../../config';
 
-const FilmName = ({ url }) => {
+const FilmTitle = ({ url }) => {
   const filmId = getIdFromUrl(url);
   const endpoint = `${process.env.REACT_APP_API_URL}${config.endpoints.films}/${filmId}/`;
   const { data } = useFetch(endpoint);  
@@ -16,8 +16,8 @@ const FilmName = ({ url }) => {
   );
 };
 
-FilmName.propTypes = {
+FilmTitle.propTypes = {
   url: PropTypes.string.isRequired,
 };
 
-export default FilmName;
+export default FilmTitle;

@@ -1,5 +1,5 @@
 import Favorite from './Favorite';
-import FilmName from './FilmName';
+import FilmTitle from './FilmTitle';
 import Homeworld from './Homeworld';
 import List from './List';
 import ListItem from './ListItem';
@@ -8,7 +8,7 @@ import Search from './Search';
 
 export {
   Favorite,
-  FilmName,
+  FilmTitle,
   Homeworld,
   List,
   ListItem,

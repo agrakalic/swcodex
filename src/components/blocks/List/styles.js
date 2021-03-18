@@ -27,7 +27,7 @@ const Wrapper = styled.div`
     }
     &__favorite {
       margin-left: auto;
-      width: 8%;
+      width: 60px;
       display: flex;
       justify-content: center;
       align-items: center;

@@ -16,17 +16,18 @@ const theme = {
   colors: {
     accent: '#be0000',
     anchor: '#2e7ec3',
-    anchorHover: '#1d64a1',
+    anchorHover: '#1d64a1', 
     primary: '#be0000',
     secondary: '#4e525d',
     tertiary: '#252f36',
+    activeIcon: '#000', 
   },
 
   layoutWidth: '90%',
   layoutWidthMax: '720px',
 
-  bodyBackground: 'url(/assets/images/bgl.jpg) fixed 50% 50%;',
-  bodyBackgroundMobile: 'url(/assets/images/bgs.jpg) fixed 50% 50%;',
+  bodyBackground: '#111 url(/assets/images/bgl.jpg) fixed 50% 50%;',
+  bodyBackgroundMobile: '#111 url(/assets/images/bgs.jpg) fixed 50% 50%;',
 
   textColorBase: '#333',
   textColorHeadings: '#222',
@@ -67,6 +68,7 @@ const theme = {
   buttonHeight: '46px',
 
   boxBackground: '#fff',
+  boxBackgroundHover: '#ccc',
   boxBackgroundInv: '#222',
   boxColor: '#333',
 

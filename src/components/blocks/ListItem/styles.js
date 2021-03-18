@@ -6,11 +6,21 @@ const Wrapper = styled.div`
     display: flex;
     padding: 0;
     cursor: pointer;
+    transition: ${theme.transitionBase};
+
+    &:hover {
+      background: ${theme.boxBackgroundHover};
+    }
 
     &__avatar {
-      background: ${theme.boxBackgroundInv};
+      background: url(/assets/images/avatar.jpg) no-repeat 50% 50%;
+      background-size: cover;
       display: block;
-      width: 80px;
+      flex: 0 0 60px;
+
+      @media only screen and (min-width: ${theme.breakpoints.mobile}) {
+        flex: 0 0 90px;
+      }
     }
     &__details {
       padding: ${theme.spacing[2]};
@@ -27,8 +37,8 @@ const Wrapper = styled.div`
     }
     &__favorite {
       margin-left: auto;
-      width: 8%;
       display: flex;
+      flex: 0 0 60px;
       justify-content: center;
       align-items: center;
     }

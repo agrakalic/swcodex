@@ -11,9 +11,11 @@ export const Inner = styled.div`
 
 export const Box = styled.div`
   background-color: ${theme.boxBackground};
+  border-radius: ${theme.borderRadiusBase};
   box-shadow: ${theme.boxShadowBase};
   color: ${theme.boxColor};
   margin-bottom: ${theme.marginBottomBase};
   padding: ${theme.spacing[2]};
   text-align: left;
+  overflow: hidden;
 `;
