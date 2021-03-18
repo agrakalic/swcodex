@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import Wrapper from './styles';
 
 const Layout = ({ children }) => {
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
     <Wrapper>
       <Header></Header>
       {children}
+      <Footer></Footer>
     </Wrapper>
   );
 };

@@ -29,7 +29,7 @@ const theme = {
   bodyBackground: '#111 url(/assets/images/bgl.jpg) fixed 50% 50%;',
   bodyBackgroundMobile: '#111 url(/assets/images/bgs.jpg) fixed 50% 50%;',
 
-  textColorBase: '#333',
+  textColorBase: '#fff',
   textColorHeadings: '#222',
   
   fontFamilyBase: '"PT Sans", sans-serif',

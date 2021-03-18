@@ -4,10 +4,6 @@ import { theme } from '../../../theme';
 const Wrapper = styled.div`
   padding: 0 ${theme.spacing[2]};
 
-  * {
-    color: #fff;
-  }
-
   p {
     max-width: 500px;
     margin: 0 auto ${theme.marginBottomBase} auto;    
