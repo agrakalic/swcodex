@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/swcodex/static/js/main.e34f66a8.chunk.js",
+    "main.js.map": "/swcodex/static/js/main.e34f66a8.chunk.js.map",
+    "runtime-main.js": "/swcodex/static/js/runtime-main.2e133537.js",
+    "runtime-main.js.map": "/swcodex/static/js/runtime-main.2e133537.js.map",
+    "static/js/2.49261b3d.chunk.js": "/swcodex/static/js/2.49261b3d.chunk.js",
+    "static/js/2.49261b3d.chunk.js.map": "/swcodex/static/js/2.49261b3d.chunk.js.map",
+    "index.html": "/swcodex/index.html",
+    "static/js/2.49261b3d.chunk.js.LICENSE.txt": "/swcodex/static/js/2.49261b3d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e133537.js",
+    "static/js/2.49261b3d.chunk.js",
+    "static/js/main.e34f66a8.chunk.js"
+  ]
+}
