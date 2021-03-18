@@ -28,6 +28,13 @@ const config = {
       exact: false,
       path: paths.CHARACTER,
     },
+    {
+      id: 'abcf372e-233d-12eb-adc1-0242ac120002',
+      name: 'film',
+      component: pages.Film,
+      exact: false,
+      path: paths.FILM,
+    },
   ],
 };
 

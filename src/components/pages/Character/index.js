@@ -1,6 +1,8 @@
 import React from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { useFetch } from '../../../hooks';
+import { getIdFromUrl } from '../../../utils';
+import { paths } from '../../../constants';
 import config from '../../../config';
 import { Homeworld, Favorite, FilmTitle } from '../../blocks';
 import { Inner, Box } from '../../../ui/containers';
@@ -31,7 +33,7 @@ const Character = () => {
               <Favorite id={id} />
             </div>
           </Box>
-          <Box className="character__data">
+          <Box className='character__data'>
             <DL>
               <DT>Birth Year</DT>
               <DD>{data.birth_year}</DD>
@@ -43,9 +45,19 @@ const Character = () => {
               <DD>{data.mass}</DD>
               <DT>Films</DT>
               <DD>
-                {data.films.map((film, i) => 
-                  <span className="character__film-name" key={i}><FilmTitle url={film} /></span>
-                )}
+                {data.films.map((film) => {                  
+                  const filmId = getIdFromUrl(film);
+                  const path = paths.FILM.replace(':id', filmId);
+                  return (
+                    <Link
+                      to={path}
+                      className='character__film-name'
+                      key={filmId}
+                    >
+                      <FilmTitle id={filmId} />
+                    </Link>
+                  );
+                })}
               </DD>
             </DL>
           </Box>

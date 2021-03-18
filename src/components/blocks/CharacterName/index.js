@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 import { useFetch } from '../../../hooks';
 import config from '../../../config';
 
-const FilmTitle = ({ id }) => {  
-  const endpoint = `${process.env.REACT_APP_API_URL}${config.endpoints.films}/${id}/`;
+const CharacterName = ({ id }) => {  
+  const endpoint = `${process.env.REACT_APP_API_URL}${config.endpoints.characters}/${id}/`;
   const { data } = useFetch(endpoint);  
 
   return (
     <>
-      {data && data.title}
+      {data && data.name}
     </>
   );
 };
 
-FilmTitle.propTypes = {
+CharacterName.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-export default FilmTitle;
+export default CharacterName;

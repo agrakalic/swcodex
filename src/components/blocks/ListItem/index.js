@@ -11,8 +11,8 @@ const ListItem = ({ character, id }) => {
   const history = useHistory();
 
   const handleBoxClick = (e, id) => {
-    const url = paths.CHARACTER.replace(':id', id);
-    history.push(url);
+    const path = paths.CHARACTER.replace(':id', id);
+    history.push(path);
   };
 
   return (
