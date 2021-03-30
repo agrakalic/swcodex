@@ -56,10 +56,10 @@ export const FormGroup = styled.div`
 
 export const FormGroupCaption = styled.div`
   display: block;
-	font-size: ${theme.fontSizeS};
-	margin-top: 5px;
-	opacity: 0.75;
-	font-style: italic;
+  font-size: ${theme.fontSizeS};
+  margin-top: 5px;
+  opacity: 0.75;
+  font-style: italic;
 `;
 
 export const FormActions = styled.div`
@@ -83,10 +83,24 @@ export const Button = styled.button`
   font-weight: ${theme.fontWeightBold};
   font-style: normal;
   text-transform: uppercase;
-  transition: ${theme.transitionBase};  
+  transition: ${theme.transitionBase};
 
   &:hover {
     background-color: ${theme.buttonBackgroundColorHover};
     color: ${theme.buttonTextColorHover};
   }
+
+  ${(props) =>
+    props.blank &&
+    `
+      background: none;
+      padding: 0;
+      color: inherit;
+      text-transform: none;
+
+      &:hover {
+        background: none;
+        color: inherit;
+      }
+  `}
 `;

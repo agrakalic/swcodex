@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getCharactersPath } from '../../../utils';
 
 import { P } from '../../../ui/typography';
+import { Button } from '../../../ui/forms';
 import Wrapper from './styles';
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
   return (
     <Wrapper>      
       <P>
-        <Link onClick={handleClick}>View All Characters</Link>
+        <Button blank onClick={handleClick}>View All Characters</Button>
       </P>
     </Wrapper>
   );
