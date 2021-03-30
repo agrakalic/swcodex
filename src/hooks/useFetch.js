@@ -4,12 +4,13 @@ import { Context } from '../context';
 const useFetch = (endpoint) => {
   const context = useContext(Context);
   const cache = context.getCache();
-  
+
   const [status, setStatus] = useState(null);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    let cancelRequest = false;
     if (!endpoint) return;
 
     const fetchData = async () => {
@@ -20,14 +21,16 @@ const useFetch = (endpoint) => {
         setStatus('done');
         setData(data);
       } else {
-        try {
+        try {         
           const response = await fetch(endpoint);
           const data = await response.json();
           cache[endpoint] = data;
+          if (cancelRequest) return;
           context.setCache(cache);
           setStatus('done');
           setData(data);
         } catch (error) {
+          if (cancelRequest) return;
           setStatus('error');
           setError(error.message);
         }
@@ -35,7 +38,11 @@ const useFetch = (endpoint) => {
     };
 
     fetchData();
-  }, [cache, context, endpoint]);
+
+    return () => {
+      cancelRequest = true;
+    };
+  }, [endpoint]);
 
   return {
     status,
