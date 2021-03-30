@@ -12,8 +12,6 @@ const Router = () => {
     pages = [...pages, page];
   });
 
-  console.log(pages);
-
   const routes = pages.map((page) => {
     return (
       <RouterWrapper
