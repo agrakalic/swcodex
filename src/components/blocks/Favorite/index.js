@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useFavorites } from '../../../hooks';
+import { Context } from '../../../context';
 import Wrapper from './styles';
 
 const Favorite = ({ id }) => {
   const { addToFavorites, isFavorite, removeFromFavorites } = useFavorites();
   const _isFavorite = isFavorite(id);
+  const context = useContext(Context);
+  const favorites = context.getFavorites();
 
+  const [changed, setChanged] = useState(false);
   const [active, setActive] = useState(_isFavorite);
+
+  useEffect(() => {
+    changed && localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites[id]]);
 
   const handleFavoriteClick = (e, id) => {
     e.stopPropagation();
     active ? removeFromFavorites(id) : addToFavorites(id);
     setActive(!active);
+    setChanged(true);
   };
 
   return (

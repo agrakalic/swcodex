@@ -7,25 +7,34 @@ export const ContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   //
-
   const getCache = useCallback(() => state.cache, [state.cache]);
 
-  const setCache = cache => {
+  const setCache = (endpoint, data) => {
     dispatch({
       type: actionTypes.SET_CACHE,
       data: {
-        cache,
+        endpoint,
+        data,
       },
     });
   };
 
   const getFavorites = useCallback(() => state.favorites, [state.favorites]);
 
-  const setFavorites = favorites => {
+  const setFavoriteById = (id) => {
     dispatch({
-      type: actionTypes.SET_FAVORITES,
+      type: actionTypes.SET_FAVORITE_BY_ID,
       data: {
-        favorites,
+        id,
+      },
+    });
+  };
+
+  const removeFavoriteById = (id) => {
+    dispatch({
+      type: actionTypes.REMOVE_FAVORITE_BY_ID,
+      data: {
+        id,
       },
     });
   };
@@ -33,10 +42,11 @@ export const ContextProvider = (props) => {
   //
 
   const utilities = {
-    getCache, 
+    getCache,
     setCache,
     getFavorites,
-    setFavorites
+    setFavoriteById,
+    removeFavoriteById,
   };
 
   return (

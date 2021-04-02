@@ -1,11 +1,12 @@
 export const actionTypes = {
-  SET_FAVORITES: 'SET_FAVORITES',
+  SET_FAVORITE_BY_ID: 'SET_FAVORITE_BY_ID',
+  REMOVE_FAVORITE_BY_ID: 'REMOVE_FAVORITE_BY_ID',
   SET_CACHE: 'SET_CACHE',
 };
 
 export const initialState = {
   cache: {},
-  favorites: JSON.parse(localStorage.getItem('favorites')) || {},    
+  favorites: JSON.parse(localStorage.getItem('favorites')) || {},
 };
 
 export const reducer = (state, action) => {
@@ -13,14 +14,27 @@ export const reducer = (state, action) => {
     case actionTypes.SET_CACHE:
       return {
         ...state,
-        cache: action.data.cache,
+        cache: {
+          ...state.cache,
+          [action.data.endpoint]: action.data.data,
+        },
       };
-    case actionTypes.SET_FAVORITES:
-      localStorage.setItem('favorites', JSON.stringify(action.data.favorites));
+    case actionTypes.SET_FAVORITE_BY_ID:
       return {
         ...state,
-        favorites: action.data.favorites,
+        favorites: {
+          ...state.favorites,
+          [action.data.id]: true,
+        },               
       };
+    case actionTypes.REMOVE_FAVORITE_BY_ID:
+        return {
+          ...state,
+          favorites: {
+            ...state.favorites,
+            [action.data.id]: false,
+          },               
+        };  
     default:
       return state;
   }

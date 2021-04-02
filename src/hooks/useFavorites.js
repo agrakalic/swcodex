@@ -4,21 +4,19 @@ import { Context } from '../context';
 const useFavorites = () => {
   const context = useContext(Context);
   const favorites = context.getFavorites();
-
-  const addToFavorites = (id) => {    
-    favorites[id] = "true";
-    context.setFavorites(favorites);
+ 
+  const addToFavorites = (id) => {
+    context.setFavoriteById(id);
   };
 
   const removeFromFavorites = (id) => {
-    delete favorites[id];
-    context.setFavorites(favorites);
+    context.removeFavoriteById(id);    
   };
 
   const isFavorite = (id) => {
-    return favorites[id] !== undefined;
+    return favorites[id] || false;
   };
-
+  
   return {
     addToFavorites,
     isFavorite,

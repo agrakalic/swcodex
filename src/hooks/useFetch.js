@@ -24,9 +24,8 @@ const useFetch = (endpoint) => {
         try {         
           const response = await fetch(endpoint);
           const data = await response.json();
-          cache[endpoint] = data;
           if (cancelRequest) return;
-          context.setCache(cache);
+          context.setCache(endpoint, data);
           setStatus('done');
           setData(data);
         } catch (error) {
